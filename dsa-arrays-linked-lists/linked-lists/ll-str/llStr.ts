@@ -99,7 +99,7 @@ class LLStr {
    **/
 
   shift(): string {
-    return "x";
+    return this.removeAt(0);
   }
 
   /** getAt(idx): get val at idx.
@@ -134,6 +134,46 @@ class LLStr {
    **/
 
   insertAt(idx: number, val: string): void {
+    if(idx > this.length || idx < 0) throw new IndexError("Error: idx out of bounds");
+    let newNode = new NodeStr(val);
+
+    // if(this.length === 0){
+    //   this.head = newNode;
+    //   this.tail = newNode;
+    //   this.length++;
+    //   return;
+    // }
+
+    if(idx === 0){
+      newNode.next = this.head;
+      this.head = newNode;
+      if (this.length === 0) this.tail = newNode;
+      this.length++;
+      return;
+    }
+
+    let count = 1;
+    let currNode = this.head;
+
+    while(currNode !== null && count <= (idx - 1)){
+      console.log("in while", idx - 1);
+      currNode = currNode!.next;
+      count++;
+    }
+    console.log(currNode);
+    if(idx === this.length){
+      newNode.next = currNode!.next
+      currNode!.next = newNode;
+      this.tail = newNode;
+      this.length++;
+      return;
+    } 
+
+    newNode.next = currNode!.next
+    currNode!.next = newNode;
+
+    this.length++;
+    return;
   }
 
   /** removeAt(idx): return & remove item at idx,
