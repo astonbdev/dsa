@@ -142,7 +142,7 @@ class LLStr {
    **/
 
   removeAt(idx: number): string {
-    let currNode = this.head!;
+    let currNode = this.head;
     
     //case error if OOB
     if(idx >= this.length || idx < 0) throw new IndexError("Error: idx out of bounds");
@@ -151,25 +151,36 @@ class LLStr {
     if(this.length === 1){
       this.head = null;
       this.tail = null;
-      this.length --;
+      this.length--;
       return currNode!.val
     }
-    
-    // while(currNode.next!.next != null){
-    //   currNode = currNode.next!;
-    // }
 
-    for(let i = 0; i <= idx - 1 ; i++){
-      currNode = currNode!.next!;
+    if(idx === 0){
+      let popped = this.head!.val;
+      this.head = this.head!.next;
+      this.length--;
+      return popped;
     }
-    const popped = currNode!.next!.val;
 
-    if(idx === this.length-1) this.tail = currNode;
+    //general case
+    //starting from head, iterate until we are at the penultimate node
+    //save ref to next node
+    //set penultimate next to it's next
+    //set new node to tail if new next is null
+    //return reffed val
 
-    this.tail = currNode;
-    currNode.next = null;
+    let count = 1;
+
+    while(currNode !== null && count <= idx - 1){
+      currNode = currNode.next;
+      count++;
+    }
+    let popped = currNode!.next!.val
+
+    currNode!.next = currNode!.next!.next;
+
+    if(idx === this.length -1) this.tail = currNode;
     this.length--;
-
     return popped;
   }
 
