@@ -40,11 +40,26 @@ class LLStr {
   /** push(val): add new value to end of list. */
 
   push(val: string): void {
+    const newNode = new NodeStr(val);
+
+    if (this.head === null) this.head = newNode;
+
+    if (this.tail !== null) this.tail.next = newNode;
+
+    this.tail = newNode;
+    this.length++;
   }
 
   /** unshift(val): add new value to start of list. */
 
   unshift(val: string): void {
+    const newNode = new NodeStr(val);
+
+    if(this.head !== null) newNode.next = this.head;
+    if(this.tail === null) this.tail = newNode;
+
+    this.head = newNode;
+    this.length++;
   }
 
   /** pop(): return & remove last item.
@@ -53,7 +68,29 @@ class LLStr {
    **/
 
   pop(): string {
-    return "x";
+    // let currNode = this.head!;
+    // //case error if empty
+    // if(currNode === null) throw new IndexError("Error: List is empty");
+    // //case one thing in list
+    // if(this.length === 1){
+    //   this.head = null;
+    //   this.tail = null;
+    //   this.length --;
+    //   return currNode!.val
+    // }
+
+    // while(currNode.next!.next != null){
+    //   currNode = currNode.next!;
+    // }
+
+    // const popped = this.tail!.val;
+    // this.tail = currNode;
+    // currNode.next = null;
+    // this.length --;
+
+    // return popped;
+
+    return this.removeAt(this.length - 1);
   }
 
   /** shift(): return & remove first item.
@@ -71,7 +108,16 @@ class LLStr {
    **/
 
   getAt(idx: number): string {
-    return "x";
+    let soughtNode = this.head;
+
+    if(idx >= this.length || idx < 0) throw new IndexError("Error: idx out of bounds");
+
+
+    for(let i = 1; i <= idx; i++){
+      soughtNode = soughtNode!.next;
+    }
+
+    return soughtNode!.val;
   }
 
   /** setAt(idx, val): set val at idx to val.
@@ -96,7 +142,35 @@ class LLStr {
    **/
 
   removeAt(idx: number): string {
-    return "x";
+    let currNode = this.head!;
+    
+    //case error if OOB
+    if(idx >= this.length || idx < 0) throw new IndexError("Error: idx out of bounds");
+    
+    //case one thing in list
+    if(this.length === 1){
+      this.head = null;
+      this.tail = null;
+      this.length --;
+      return currNode!.val
+    }
+    
+    // while(currNode.next!.next != null){
+    //   currNode = currNode.next!;
+    // }
+
+    for(let i = 0; i <= idx - 1 ; i++){
+      currNode = currNode!.next!;
+    }
+    const popped = currNode!.next!.val;
+
+    if(idx === this.length-1) this.tail = currNode;
+
+    this.tail = currNode;
+    currNode.next = null;
+    this.length--;
+
+    return popped;
   }
 
   /** toArray (useful for tests!) */
