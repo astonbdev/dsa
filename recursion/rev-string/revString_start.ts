@@ -8,7 +8,7 @@ function revString(str: string): string {
 
   if(str === "") return "";
 
-  return revString(str.slice(0,1)) + str
+  return revString(str.slice(1)) + str[0];
 }
 
 export { revString };

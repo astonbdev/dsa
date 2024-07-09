@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { revString } from "./revString";
+import { revString } from "./revString_start";
 
 it("returns a reversed copy of the string", function () {
   expect(revString("")).toBe("");
