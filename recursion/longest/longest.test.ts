@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { longest } from "./longest";
+import { longest } from "./longest_start";
 import { LLStr } from "../common/ll";
 
 it("returns the length of the longest word in a list of words", function () {
