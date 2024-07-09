@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 import { LLNum } from "../common/ll";
-import { product } from "./product";
+import { product } from "./product_start";
 
 it("returns the product of all numbers in an linked list", function () {
   expect(product(new LLNum().head)).toBe(1);
