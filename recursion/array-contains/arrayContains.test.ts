@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { arrayContains } from "./arrayContains";
+import { arrayContains } from "./arrayContains_start";
 
 describe("#arrayContains", function () {
   it("compares nested objects etc", function () {

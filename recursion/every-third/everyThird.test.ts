@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { everyThird} from "./everyThird";
+import { everyThird} from "./everyThird_start";
 
 describe("everyThird", function () {
   it("returns a new list of every third", function () {

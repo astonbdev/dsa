@@ -1,5 +1,5 @@
 import { it, expect} from "vitest";
-import { isBalanced } from "./balancedBrackets";
+import { isBalanced } from "./balancedBrackets_start";
 
 it("succeeds", function () {
   expect(isBalanced("")).toBe(true);

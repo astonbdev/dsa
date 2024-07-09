@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { makeBoard, find } from "./boggle";
+import { makeBoard, find } from "./boggle_start";
 
 test("simple case", function () {
   const board = makeBoard(`

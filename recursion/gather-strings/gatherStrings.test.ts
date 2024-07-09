@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { gatherStrings } from "./gatherStrings";
+import { gatherStrings } from "./gatherStrings_start";
 
 it("gathers all object string values into an array", function () {
   let whiskey: Record<string, any> = {

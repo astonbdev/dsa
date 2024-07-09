@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { dump, isValid, add, simplify } from "./splitSquare";
+import { dump, isValid, add, simplify } from "./splitSquare_start";
 
 
 describe("dump", function () {
