@@ -1,20 +1,9 @@
 /** everyOther: return a string with every other letter. */
 
 function everyOther(str: string): string {
-  function _getEveryOther(str:string, count: number): string{
-    if(str.length === 0) return str;
-    const characters = str.split("");
-    let result;
+  if(str.length === 0) return "";
 
-    if(count % 2 !== 0){
-      characters.shift();
-    }
-
-    result = _getEveryOther(characters.join(""), count + 1);
-    return result; 
-  }
-  
-  return _getEveryOther(str, 0);
+  return str[0] + everyOther(str.slice(2));
 
   //BASE CASE: There is no more string
   //start our new string

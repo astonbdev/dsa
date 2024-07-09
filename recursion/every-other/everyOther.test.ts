@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { everyOther } from "./everyOther";
+import { everyOther } from "./everyOther_start";
 
 it("returns a string with every other character in the input", function () {
   expect(everyOther("")).toBe("");
