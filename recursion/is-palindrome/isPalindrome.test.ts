@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { isPalindrome } from "./isPalindrome";
+import { isPalindrome } from "./isPalindrome_start";
 
 it("returns true if the string is a palindrome", function () {
   expect(isPalindrome("")).toBe(true);
