@@ -7,12 +7,13 @@ function find(arr: number[], val: number): boolean {
   //if it is, return true;
 
   if(arr.length === 0) return false;
+  console.log(arr, val);
 
-  if(arr[length-1] === val) return true;
+  if(arr[0] === val) return true;
 
-  arr.pop();
+  
 
-  return find(arr, val);
+  return find(arr.slice(1), val);
 }
 
 export { find };

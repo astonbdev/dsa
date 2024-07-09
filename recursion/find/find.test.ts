@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { find } from "./find";
+import { find } from "./find_start";
 
 const nums = [1, 2, 3];
 
