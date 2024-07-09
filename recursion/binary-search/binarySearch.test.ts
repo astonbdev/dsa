@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { binarySearch } from "./binarySearch";
+import { binarySearch } from "./binarySearch_start";
 
 it("should find the index of a value in a sorted array", function () {
   expect(binarySearch([1, 2, 3, 4], 4)).toEqual(true);
