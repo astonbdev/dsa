@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { largeTree, smallTree } from "../common/tree.test";
-import { numGreater} from "./numGreater";
+import { numGreater} from "./numGreater_start";
 
 describe("numGreater", function () {
   it("counts nodes in small trees", function () {
