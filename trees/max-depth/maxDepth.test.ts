@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { largeTree, smallTree } from "../common/tree.test";
-import { maxDepth } from "./maxDepth";
+import { maxDepth } from "./maxDepth_start";
 
 describe("maxDepth", function () {
   it("handles simple trees", function () {
