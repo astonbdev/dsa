@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { largeTree, smallTree } from "../common/tree.test";
-import { sumValues } from "./sumValues";
+import { sumValues } from "./sumValues_start";
 
 describe("sumValues", function () {
   it("sums simple trees", function () {
