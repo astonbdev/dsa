@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { UGraphStr, UGraphNodeStr } from "./graph";
+import { UGraphStr, UGraphNodeStr } from "./graph_start";
 
 describe("addNode", function () {
   it("should add a key in the adjacency", function () {
