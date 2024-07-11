@@ -4,9 +4,18 @@ import { UGraphNodeStr } from "../graph/graph";
 
 function rDfs(
     start: UGraphNodeStr,
-    result: string[] = [],
-    visited = new Set([start])): string[] {
-  return ["todo"];
+    result: UGraphNodeStr[] = [],
+    visited = new Set([start])): UGraphNodeStr[] {
+
+    result.push(start);
+    
+    for(const node of start.adjacent){
+      if(visited.has(node)) continue;
+      visited.add(node);
+      rDfs(node, result, visited);
+    }
+  
+    return result;
 }
 
 /** Return array of nodes, in DFS order (iterative version)  */

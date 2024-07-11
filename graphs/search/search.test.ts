@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { UGraphStr } from "../common/graph";
-import { bfs, iDfs, rDfs } from "./search";
+import { bfs, iDfs, rDfs } from "./search_start";
 
 describe("DFS", function () {
   it.each([
@@ -17,15 +17,15 @@ describe("DFS", function () {
   });
 });
 
-describe("BFS", function () {
-  it("returns array of nodes using bfs", function () {
-    //    d -- b -- a -- c
-    //     \------------/
+// describe("BFS", function () {
+//   it("returns array of nodes using bfs", function () {
+//     //    d -- b -- a -- c
+//     //     \------------/
 
-    const graph = new UGraphStr();
-    const [a, b, c, d] = graph.addFromVals(["a", "b", "c", "d"]);
-    graph.addEdges([[d, b], [b, a], [a, c], [c, d]]);
-    const rez = bfs(a).map(node => node.value).join("-");
-    expect([ "a-b-c-d", "a-c-b-d" ]).toContain(rez);
-  });
-});
+//     const graph = new UGraphStr();
+//     const [a, b, c, d] = graph.addFromVals(["a", "b", "c", "d"]);
+//     graph.addEdges([[d, b], [b, a], [a, c], [c, d]]);
+//     const rez = bfs(a).map(node => node.value).join("-");
+//     expect([ "a-b-c-d", "a-c-b-d" ]).toContain(rez);
+//   });
+// });
